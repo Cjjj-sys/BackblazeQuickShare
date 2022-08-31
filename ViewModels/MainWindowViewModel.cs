@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BackblazeQuickShare.ViewModels
 {
@@ -16,6 +18,14 @@ namespace BackblazeQuickShare.ViewModels
         private SettingViewModel settingViewModel;
         [ObservableProperty]
         private INotifyPropertyChanged _currentViewModel;
+        [ObservableProperty]
+        private string _fileName;
+        [ObservableProperty]
+        private double _progress;
+        [ObservableProperty]
+        private string _status;
+        [ObservableProperty]
+        private string _info;
 
         public MainWindowViewModel(DragViewModel dragViewModel, SettingViewModel settingViewModel)
         {
@@ -32,6 +42,13 @@ namespace BackblazeQuickShare.ViewModels
                 "Drag" => dragViewModel,
                 "Setting" => settingViewModel
             };
+        }
+
+        [RelayCommand]
+        public void TryUploadFile(string fileName)
+        {
+            FileName = fileName;
+            MessageBox.Show(fileName);
         }
     }
 }

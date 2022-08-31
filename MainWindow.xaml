@@ -20,7 +20,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"
-                              MinWidth="100" />
+                              MinWidth="100"
+                              MaxWidth="150"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Border x:Name="CoolBorder"
@@ -31,13 +32,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <RadioButton HorizontalAlignment="Stretch"
                              VerticalAlignment="Stretch"
                              Content="Drag and Share"
                              Style="{DynamicResource RadioButtonStyleNavigate}"
                              Command="{Binding NavigateToCommand}"
-                             CommandParameter="Drag"/>
+                             CommandParameter="Drag"
+                             IsChecked="True"/>
                 <RadioButton Grid.Row="1"
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Stretch"
@@ -45,9 +48,23 @@
                              Style="{DynamicResource RadioButtonStyleNavigate}"
                              Command="{Binding NavigateToCommand}"
                              CommandParameter="Setting"/>
+                <Border Margin="1, 10" Grid.Row="2">
+                    <StackPanel Width="125">
+                        <TextBlock Text="FileName:" />
+                        <TextBlock Text="{Binding FileName}" TextWrapping="Wrap" />
+                        <TextBlock Text="Status:" />
+                        <TextBlock Text="{Binding Status}" />
+                        <TextBlock Text="Progress:" />
+                        <ProgressBar HorizontalAlignment="Stretch"
+                                     Height="20"
+                                     Margin="0, 2"
+                                     Value="{Binding Progress}" />
+                        <TextBlock Text="{Binding Info}" TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
             </Grid>
         </Border>
-        <Border Grid.Column="1">
+        <Border x:Name="DragDropBorder" Grid.Column="1" DragEnter="DragDropBorder_DragEnter" Drop="DragDropBorder_Drop" AllowDrop="True">
             <ContentControl Content="{Binding CurrentViewModel}" />
         </Border>
     </Grid>

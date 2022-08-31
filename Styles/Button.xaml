@@ -390,11 +390,14 @@
                         </Border.BorderBrush>
 
                         <Grid>
-
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <Border x:Name="Indicator"
                                     Height="5"
                                     Width="4"
-                                    Margin="2, 0"
+                                    Margin="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     Visibility="Visible"
@@ -405,7 +408,7 @@
                                 </Border.Background>
                             </Border>
 
-                            <ContentPresenter />
+                            <ContentPresenter Grid.Column="1" />
                         </Grid>
                     </Border>
 

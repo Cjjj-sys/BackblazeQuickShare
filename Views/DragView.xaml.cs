@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BackblazeQuickShare.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace BackblazeQuickShare.Views
     /// </summary>
     public partial class DragView : UserControl
     {
+        private DragViewModel dragViewModel;
+
         public DragView()
         {
             InitializeComponent();
         }
+
+        
     }
 }

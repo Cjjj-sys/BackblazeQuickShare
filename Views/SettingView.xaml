@@ -15,12 +15,21 @@
         <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Backblaze Api: " FontSize="24" Foreground="#218ADE" />
-                <Grid Margin="5, 0">
+                <Grid Margin="15, 3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="" />
+                    <TextBlock Text="Key ID: " />
+                    <TextBox Grid.Column="1" />
+                </Grid>
+                <Grid Margin="15, 3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Application Key: " />
+                    <TextBox Grid.Column="1" />
                 </Grid>
             </StackPanel>
         </ScrollViewer>
@@ -30,6 +39,6 @@
                 Content="Save"
                 FontSize="16"
                 HorizontalAlignment="Right"
-                Margin="20, 1" />
+                Margin="1, 1" />
     </Grid>
 </UserControl>
