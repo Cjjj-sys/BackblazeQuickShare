@@ -21,7 +21,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Key ID: " />
-                    <TextBox Grid.Column="1" />
+                    <TextBox Grid.Column="1" Text="{Binding KeyID}" />
                 </Grid>
                 <Grid Margin="15, 3">
                     <Grid.ColumnDefinitions>
@@ -29,7 +29,15 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Application Key: " />
-                    <TextBox Grid.Column="1" />
+                    <TextBox Grid.Column="1" Text="{Binding ApplicationKey}" />
+                </Grid>
+                <Grid Margin="15, 3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Url: " />
+                    <TextBox Grid.Column="1" Text="{Binding Url}" />
                 </Grid>
             </StackPanel>
         </ScrollViewer>
@@ -39,6 +47,7 @@
                 Content="Save"
                 FontSize="16"
                 HorizontalAlignment="Right"
-                Margin="1, 1" />
+                Margin="1, 1" 
+                Command="{Binding SaveCommand}"/>
     </Grid>
 </UserControl>
