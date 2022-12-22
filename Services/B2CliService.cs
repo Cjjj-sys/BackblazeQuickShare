@@ -14,6 +14,6 @@ namespace BackblazeQuickShare.Services
 
         }
 
-        public async Task Upload(string fileName, string bukkitID, Action())
+        //public async Task Upload(string fileName, string bukkitID, Action())
     }
 }
